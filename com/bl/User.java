@@ -80,6 +80,20 @@ public class User
 			System.out.println("Please Enter a Valid Mobile Num ex:- 91 9121912144");
 	}
 
+	/**
+	 * create method password() which contains minimum 8 characters
+	 */
+	public void passWord() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter password :  ");
+		String passWord = sc.nextLine();
+		boolean check = Pattern.matches("[a-zA-Z]{8,}", passWord);
+		if (check)
+			System.out.println("Valid");
+		else
+			System.out.println("Please Enter a Valid password, it should have minimum 8 characters");
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		/*
@@ -93,5 +107,6 @@ public class User
 		user.lastNameCheck();
 		user.email();
 		user.mobileNum();
+		user.passWord();
 	}
 }
