@@ -55,11 +55,29 @@ public class User
 		/*
 		 * As a User needs to check the regex pattern for the emailId
 		 */
-		boolean check = Pattern.matches("([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*" + "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*", eMail);
+		boolean check = Pattern
+				.matches("([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*" + "@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*", eMail);
 		if (check)
 			System.out.println("Valid");
 		else
 			System.out.println("Please Enter a Valid Email with Only \"example.abc@bl.co.in\" latter");
+	}
+
+	/**
+	 * creating method mobileNum() to check mobileNum is valid or not
+	 */
+	public void mobileNum() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Mobile number with country code (91)  : ");
+		String mobileNum = sc.nextLine();
+		/*
+		 * As a User needs to check the regex pattern for the MobileNumber
+		 */
+		boolean check = Pattern.matches("^[+0-9]{2}{10}$", mobileNum);
+		if (check)
+			System.out.println("Valid");
+		else
+			System.out.println("Please Enter a Valid Mobile Num ex:- 91 9121912144");
 	}
 
 	public static void main(String[] args) {
@@ -74,5 +92,6 @@ public class User
 		user.firstNameCheck();
 		user.lastNameCheck();
 		user.email();
+		user.mobileNum();
 	}
 }
